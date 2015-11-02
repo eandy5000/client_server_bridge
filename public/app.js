@@ -7,13 +7,10 @@ var postObject ={
 $(document).ready(function(){
 
 
-//get call works
-    //getCall();
 
 
-postCall();
 
-
+addButtons();
 
 
 
@@ -43,6 +40,23 @@ function postCall() {
         success: function(data){
             console.log("postObject has been converted to data ",data);
         }
+    });
+
+}
+
+//dom modification and listeners
+
+
+
+function addButtons(){
+    $('body').append('<div class="get">GET</div>');
+    $('body').append('<div class="post">POST</div>');
+
+    $('.get').on('click',function(){
+        getCall();
+    });
+    $('.post').on('click',function(){
+        postCall();
     });
 
 }
